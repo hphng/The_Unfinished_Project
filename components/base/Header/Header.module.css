@@ -1,0 +1,18 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    /* Vertical alignment */
+}
+
+.searchBar {
+    margin-left: 10px;
+    /* Adjust the margin as needed */
+}
+
+.content {
+    margin-left: auto;
+    /* Push the content to the right */
+    display: flex;
+    gap: 10px;
+    /* Adjust the gap between content items */
+}
