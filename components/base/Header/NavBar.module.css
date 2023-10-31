@@ -1,6 +1,7 @@
 .navbar {
     display: flex;
     align-items: center;
+    background-color: #779282;
     /* Vertical alignment */
 }
 
