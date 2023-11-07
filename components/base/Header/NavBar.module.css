@@ -2,18 +2,45 @@
     display: flex;
     align-items: center;
     background-color: #779282;
+    padding-left: 30px;
+    padding: 10px;
+    gap: 10px;
+    flex-grow: 1;
     /* Vertical alignment */
 }
 
+.prjLogo{
+    display: flex;
+    flex-grow: 1;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
 .searchBar {
-    margin-left: 10px;
+    margin-left: auto;
+    background-color: #F5F5F5;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-grow: 0.5;
     /* Adjust the margin as needed */
 }
 
 .content {
     margin-left: auto;
-    /* Push the content to the right */
+    padding-left: 30px;
     display: flex;
-    gap: 10px;
+    gap: 30px;
+    justify-content: space-evenly;
+    flex-grow: 0.5;
     /* Adjust the gap between content items */
+}
+
+.content a{
+    text-decoration: none;
+    color: black;
+}
+
+.content a:hover{
+    color: blue;
 }
