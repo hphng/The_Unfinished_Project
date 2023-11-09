@@ -1,46 +1,45 @@
 .navbar {
-    display: flex;
-    align-items: center;
-    background-color: #779282;
-    padding-left: 30px;
-    padding: 10px;
-    gap: 10px;
-    flex-grow: 1;
-    /* Vertical alignment */
+  display: flex;
+  align-items: center;
+  background-color: #779282;
+  padding-left: 30px;
+  padding: 10px;
+  gap: 10px;
+  flex-grow: 1;
+  /* Vertical alignment */
 }
 
-.prjLogo{
-    display: flex;
-    flex-grow: 1;
-    margin-left: 15px;
-    flex-shrink: 0;
+.prjLogo {
+  display: flex;
+  flex-grow: 1;
+  margin-left: 15px;
+  flex-shrink: 0;
 }
-
+/* 
 .searchBar {
-    margin-left: auto;
-    background-color: #F5F5F5;
-    padding: 10px;
-    border-radius: 10px;
-    display: flex;
-    flex-grow: 0.5;
-    /* Adjust the margin as needed */
-}
+  margin-left: auto;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-grow: 0.5;
+} */
 
 .content {
-    margin-left: auto;
-    padding-left: 30px;
-    display: flex;
-    gap: 30px;
-    justify-content: space-evenly;
-    flex-grow: 0.5;
-    /* Adjust the gap between content items */
+  margin-left: auto;
+  padding-left: 30px;
+  display: flex;
+  gap: 30px;
+  justify-content: space-evenly;
+  flex-grow: 0.5;
+  /* Adjust the gap between content items */
 }
 
-.content a{
-    text-decoration: none;
-    color: black;
-    transition: color 0.3s ease;
-    position: relative;
+.content a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+  position: relative;
 }
 
 /* .content a:hover{
@@ -49,31 +48,46 @@
 } */
 
 .content a::after {
-    content: '';
-    /* Add an empty content to make the ::after pseudo-element appear */
-    display: block;
-    /* Make it a block-level element */
-    border-bottom: 2px solid transparent;
-    /* Set the initial border-bottom to transparent */
-    transition: border-bottom 0.3s ease;
-    /* Add a smooth transition for the border-bottom property */
-    position: absolute;
-    /* Position relative to the parent link */
-    left: 0;
-    /* Align to the left edge of the link */
-    bottom: 10;
-    /* Align to the bottom edge of the link */
-    width: 100%;
-    /* Make the underline span the full width of the link */
+  content: "";
+  /* Add an empty content to make the ::after pseudo-element appear */
+  display: block;
+  /* Make it a block-level element */
+  border-bottom: 2px solid transparent;
+  /* Set the initial border-bottom to transparent */
+  transition: border-bottom 0.3s ease;
+  /* Add a smooth transition for the border-bottom property */
+  position: absolute;
+  /* Position relative to the parent link */
+  left: 0;
+  /* Align to the left edge of the link */
+  bottom: 10;
+  /* Align to the bottom edge of the link */
+  width: 100%;
+  /* Make the underline span the full width of the link */
 }
 
 /* Adjust the styles for the underline box on hover */
 .content a:hover::after {
-    border-bottom: 2px solid black;
-    /* Change border color on hover */
+  border-bottom: 2px solid black;
+  /* Change border color on hover */
 }
 
 .content a.active::after {
-    border-bottom: 2px solid black;
-    /* Keep the underline in place */
+  border-bottom: 2px solid black;
+  /* Keep the underline in place */
 }
+
+.searchBar {
+  background-color: white;
+  display: flex;
+  /* flex-grow: 0.5; */
+  border-radius: 10px;
+  /* border: 3px solid rgba(120, 120, 120, 0.374); */
+  padding: 0.5rem 1rem;
+  width: 100%;
+  justify-content: space-between;
+}
+/* .searchBar > input {
+  border: none;
+  outline: none;
+} */
