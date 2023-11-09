@@ -39,8 +39,41 @@
 .content a{
     text-decoration: none;
     color: black;
+    transition: color 0.3s ease;
+    position: relative;
 }
 
-.content a:hover{
+/* .content a:hover{
     color: blue;
+    text-decoration: underline;
+} */
+
+.content a::after {
+    content: '';
+    /* Add an empty content to make the ::after pseudo-element appear */
+    display: block;
+    /* Make it a block-level element */
+    border-bottom: 2px solid transparent;
+    /* Set the initial border-bottom to transparent */
+    transition: border-bottom 0.3s ease;
+    /* Add a smooth transition for the border-bottom property */
+    position: absolute;
+    /* Position relative to the parent link */
+    left: 0;
+    /* Align to the left edge of the link */
+    bottom: 10;
+    /* Align to the bottom edge of the link */
+    width: 100%;
+    /* Make the underline span the full width of the link */
+}
+
+/* Adjust the styles for the underline box on hover */
+.content a:hover::after {
+    border-bottom: 2px solid black;
+    /* Change border color on hover */
+}
+
+.content a.active::after {
+    border-bottom: 2px solid black;
+    /* Keep the underline in place */
 }

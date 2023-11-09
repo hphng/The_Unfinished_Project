@@ -1,9 +1,16 @@
 import React from 'react'
+import { useState } from 'react';
 import Image from 'next/image';
 import Bars from './Bars';
 import styles from './NavBar.module.css'
 
 export default function NavBar() {
+    const [activeLink, setActiveLink] = useState(null);
+
+    const handleClick = (index) => {
+        setActiveLink(index === activeLink ? null : index);
+    };
+
   return (
       <div className={styles.navbar}>   
           <Bars />    
@@ -19,10 +26,13 @@ export default function NavBar() {
           <div className={styles.searchBar}>
               Search Bar Here
           </div>
-          <div className={styles.content}>
-              <a href='#Home'>Home</a>
-              <a href='#Middle'>Middle</a>
-              <a href='#Contact'>Contact</a>
+          <div className={styles.content }>
+              <a href='#Home' onClick={() => handleClick(0)}
+                  className={activeLink === 0 ? styles.active : ''}>Home</a>
+              <a href='#Middle' onClick={() => handleClick(1)}
+                  className={activeLink === 1 ? styles.active : ''}>Middle</a>
+              <a href='#Contact' onClick={() => handleClick(2)}
+                  className={activeLink === 2 ? styles.active : ''}>Contact</a>
           </div>
       </div>
   )
