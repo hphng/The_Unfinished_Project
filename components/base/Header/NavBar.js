@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Bars from './Bars';
 import styles from './NavBar.module.css'
+import { FaBars } from 'react-icons/fa';
 
 export default function NavBar() {
     const [activeLink, setActiveLink] = useState(null);
@@ -13,7 +14,8 @@ export default function NavBar() {
 
   return (
       <div className={styles.navbar}>   
-          <Bars />    
+          {/* <Bars />     */}
+          <FaBars />
           <div className={styles.prjLogo}>
               <Image
                   priority
