@@ -18,11 +18,12 @@ import { IconContext } from 'react-icons/lib';
 const SidebarNav = styled.nav`
   background: #779282;
   opacity: 80%;
-  width: 250px;
+  width: ${({ sidebarWidth }) => (sidebarWidth ? '250px' : '0')};
   height: 100vh;
   display: flex;
   justify-content: center;
-  // position: fixed;
+  position: fixed;
+  top: 80px;
   left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
   transition: 350ms;
   z-index: 10;
@@ -31,22 +32,18 @@ const SidebarNav = styled.nav`
 const SidebarWrap = styled.div`
   width: 100%;
 `;
-export default function SideBar({ closeSidebar }) {
+export default function SideBar({ closeSidebar}) {
 
-  // const [sidebar, setSidebar] = useState(false);
-
+  const [sidebarWidth, setSidebarWidth] = useState(true);
   // const showSidebar = () => setSidebar(!sidebar);
 
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
-  
-            {/* <FaIcons.FaBars onClick={showSidebar} /> */}
-   
-        <SidebarNav sidebar={true}>
+        <SidebarNav sidebar={true} sidebarWidth={sidebarWidth} >
           <SidebarWrap>
           
-            <AiIcons.AiOutlineClose onClick={closeSidebar} />
+            {/* <AiIcons.AiOutlineClose onClick={closeSidebar} /> */}
             
             {SideBarData.map((item, index) => {
               return <SubMenu item={item} key={index} />;

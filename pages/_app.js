@@ -9,6 +9,13 @@ import Footer from '../components/base/Footer';
 import SideBar from '../components/base/SideBar';
 
 import '../styles/globals.css';
+import styled from 'styled-components';
+
+const ContentContainer = styled.div`
+  margin-left: ${({ sidebarWidth }) => (sidebarWidth ? '250px' : '0')}; /* Adjust margin based on sidebarWidth state */
+  transition: margin 350ms;
+  padding: 20px; /* Add padding to the content area */
+`;
 
 function MyApp({ Component, pageProps }) {
     return (
@@ -18,11 +25,14 @@ function MyApp({ Component, pageProps }) {
         </Head>
         <div className="app-container">
           <Header /> {/* Render the Header component */}
-          <SideBar />
+          
+          {/* <ContentContainer sidebarWidth={sidebarWidth}>
+            <Component {...pageProps} />
+          </ContentContainer> */}
           <main>
             <Component {...pageProps} />
           </main>
-          <Footer /> {/* Render the Footer component */}
+          
         </div>
       </>
     );

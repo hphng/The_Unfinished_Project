@@ -7,15 +7,16 @@ const SidebarLink = styled.div`
   color: #e1e9fc;
   justify-content: space-between;
   align-items: center;
+  padding-left: 10px;
   // padding: 20px;
   list-style: none;
-  height: 60px;
+  height: 50px;
   text-decoration: none;
   font-size: 18px;
 
   &:hover {
     background: #252831;
-    border-left: 4px solid #632ce4;
+    border-left: 4px solid black;
     cursor: pointer;
   }
 `;
@@ -26,7 +27,7 @@ const SidebarLabel = styled.span`
 
 const DropdownLink = styled.div`
   background: #414757;
-  height: 60px;
+  height: 50px;
   padding-left: 3rem;
   display: flex;
   align-items: center;
