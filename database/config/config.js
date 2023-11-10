@@ -3,10 +3,10 @@ require('dotenv').config();
 
 module.exports = {
   development: {
-    username: process.env.PSQL_USER,
+    username: process.env.PSQL_USER || "postgres",
     password: process.env.PSQL_PASS,
-    database: process.env.PSQL_D,
-    host: process.env.DB_HOST,
+    database: process.env.PSQL_D || "postgres", 
+    host: process.env.DB_HOST || "localhost:5432",
     dialect: "postgres",
   },
   // test: {
