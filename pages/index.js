@@ -1,9 +1,12 @@
-import Layout from '@components/layout';
+import React from 'react';
 
-export default function MainPage() {
-    return (
-      <Layout title={process.env.NEXT_PUBLIC_SITE_TITLE}>
-
-      </Layout>
-    );
+function Home() {
+  return (
+    <div>
+      <h2>This is insde index.js</h2>
+      <p>This is also inside index.js</p>
+    </div>
+  );
 }
+
+export default Home;

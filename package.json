@@ -18,6 +18,10 @@
     "pg-hstore": "^2.3.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+<<<<<<< HEAD
     "sequelize": "^6.34.0"
+=======
+    "styled-components": "^6.1.0"
+>>>>>>> 10984e84121e4a954f6e2b93e3c70557882f4fee
   }
 }
