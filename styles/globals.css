@@ -11,4 +11,19 @@ body{
 }
 
 
+/* Hide scrollbar for Chrome, Safari, and Edge */
+::-webkit-scrollbar {
+  width: 0;
+}
 
+/* Optional: style the track (the area behind the thumb) */
+::-webkit-scrollbar-track {
+  background: transparent;
+  /* or any background color you want */
+}
+
+/* Optional: style the thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  /* or any background color you want */
+}

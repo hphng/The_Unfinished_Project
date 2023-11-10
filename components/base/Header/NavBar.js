@@ -10,21 +10,21 @@ import  SideBar  from "../SideBar";
 
 export default function NavBar() {
   const [activeLink, setActiveLink] = useState(null);
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  // const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const handleClick = (index) => {
     setActiveLink(index === activeLink ? null : index);
   };
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
-  };
+  // const toggleSidebar = () => {
+  //   setSidebarOpen(!isSidebarOpen);
+  // };
 
 
   return (
     <div className={styles.navbar}>
-      <FaBars onClick={toggleSidebar} />
-      {isSidebarOpen && <SideBar closeSidebar={toggleSidebar} />}
+      {/* <FaBars onClick={toggleSidebar} />
+      {isSidebarOpen && <SideBar closeSidebar={toggleSidebar} />} */}
       <div className={styles.prjLogo}>
         <Image priority src="/images/logo.png" width={150} height={60} alt="" />
       </div>
