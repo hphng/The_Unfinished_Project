@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./NavBar.module.css";
+import { TfiSearch } from "react-icons/tfi";
 
 const SearchBar = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
   return (
-    <div style={{ display: "flex" }}>
+    <div className={styles.searchBar}>
+      <button className={styles.searchIcon}>
+        <TfiSearch />
+      </button>
       <input
-        className={styles.searchBar}
-        placeholder="Search by name/email"
         type="text"
-        // value={filter}
-        // onChange={(e) => setFilter(e.target.value)}
+        placeholder="Search in Gmail"
+        value={searchQuery}
+        onChange={handleSearchChange}
+        className={styles.input}
       />
-      <button>Search</button>
     </div>
   );
 };
