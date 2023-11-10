@@ -9,7 +9,11 @@ module.exports = {
     "./public/index.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        'custom-green': '#779282',
+      }
+    },
     screens: {
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
