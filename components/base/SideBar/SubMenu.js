@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 import styled from 'styled-components';
 
-const SidebarLink = styled`
+const SidebarLink = styled.div`
   display: flex;
   color: #e1e9fc;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  // padding: 20px;
   list-style: none;
   height: 60px;
   text-decoration: none;
@@ -24,7 +24,7 @@ const SidebarLabel = styled.span`
   margin-left: 16px;
 `;
 
-const DropdownLink = styled`
+const DropdownLink = styled.div`
   background: #414757;
   height: 60px;
   padding-left: 3rem;

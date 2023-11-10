@@ -16,12 +16,13 @@ import { IconContext } from 'react-icons/lib';
 // `;
 
 const SidebarNav = styled.nav`
-  background: #15171c;
+  background: #779282;
+  opacity: 80%;
   width: 250px;
   height: 100vh;
   display: flex;
   justify-content: center;
-  position: fixed;
+  // position: fixed;
   left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
   transition: 350ms;
   z-index: 10;
