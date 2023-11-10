@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const SidebarLink = styled.div`
   display: flex;
@@ -57,8 +57,8 @@ const SubMenu = ({ item }) => {
           {item.subNav && subnav
             ? item.iconOpened
             : item.subNav
-              ? item.iconClosed
-              : null}
+            ? item.iconClosed
+            : null}
         </div>
       </SidebarLink>
       {subnav &&
