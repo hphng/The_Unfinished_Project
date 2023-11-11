@@ -27,24 +27,24 @@ export const SideBarData = [
   {
     title: "Receiver",
     path: "/receiver",
-    icon: <FaIcons.FaUserFriends />,
+    icon: <AiIcons.AiFillProfile />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
         title: "Friend 1",
         path: "/receiver/friend1",
-        icon: <AiIcons.AiFillProfile />,
+        icon: <FaIcons.FaUserFriends />,
       },
       {
         title: "Friend 2",
         path: "/receiver/friend2",
-        icon: <AiIcons.AiFillProfile />,
+        icon: <FaIcons.FaUserFriends />,
       },
       {
         title: "Friend 3",
         path: "/receiver/friend3",
-        icon: <AiIcons.AiFillProfile />,
+        icon: <FaIcons.FaUserFriends />,
       },
     ],
   },

@@ -28,7 +28,9 @@ export default function NavBar() {
       <div className={styles.prjLogo}>
         <Image priority src="/images/logo.png" width={150} height={60} alt="" />
       </div>
+
       <SearchBar />
+
       <div className={styles.content}>
         <a
           href="#Home"

@@ -18,7 +18,6 @@
 
 .content {
   margin-left: auto;
-  padding-left: 30px;
   display: flex;
   /* gap: 30px; */
   justify-content: space-evenly;
@@ -72,9 +71,11 @@
   display: flex;
   align-items: center;
   background-color: #f1f3f4;
+  flex-shrink: 1;
   padding: 8px;
   border-radius: 8px;
   width: 500px;
+  transition: width 0.3s ease, max-width 0.3s ease;
 }
 
 .searchIcon {
@@ -96,4 +97,47 @@
   padding: 0;
   margin: 0;
   background-color: transparent;
+}
+
+
+@media (max-width: 1024px) {
+  .searchBar {
+    width: 100%;
+    max-width: 300px;
+   
+  }
+
+  .input::placeholder {
+    content: " ";
+  }
+}
+
+@media (max-width: 768px) {
+  .searchBar {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .input {
+    width: 140px;
+    /* padding-right: 5px; */
+  }
+
+}
+
+@media (max-width: 640px) {
+  .searchBar {
+    width: 100%;
+    max-width: 100px;
+  }
+
+  .input{
+    width: 70px;
+    /* padding-right: 5px; */
+  }
+
+  .input::placeholder {
+    content: " ";
+    color: transparent;
+  }
 }

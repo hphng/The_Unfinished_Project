@@ -32,6 +32,7 @@ const SidebarNav = styled.nav`
 
 const SidebarWrap = styled.div`
   width: 100%;
+ // padding-left: 10px;
 `;
 
 

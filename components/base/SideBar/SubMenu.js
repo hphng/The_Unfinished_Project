@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from 'next/link';
 
 import styled from "styled-components";
 
@@ -7,8 +8,8 @@ const SidebarLink = styled.div`
   color: #e1e9fc;
   justify-content: space-between;
   align-items: center;
-  padding-left: 10px;
-  // padding: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
   list-style: none;
   height: 50px;
   text-decoration: none;
@@ -16,7 +17,7 @@ const SidebarLink = styled.div`
 
   &:hover {
     background: #252831;
-    border-left: 4px solid black;
+   // border-left: 4px solid black;
     cursor: pointer;
   }
 `;
@@ -36,7 +37,7 @@ const DropdownLink = styled.div`
   font-size: 18px;
 
   &:hover {
-    background: #632ce4;
+    background: #29183A;
     cursor: pointer;
   }
 `;
@@ -49,10 +50,12 @@ const SubMenu = ({ item }) => {
   return (
     <>
       <SidebarLink onClick={item.subNav && showSubnav}>
-        <div>
-          {item.icon}
-          <SidebarLabel>{item.title}</SidebarLabel>
-        </div>
+        <Link href={item.path}>
+          <div>
+            {item.icon}
+            <SidebarLabel>{item.title}</SidebarLabel>
+          </div>
+        </Link>
         <div>
           {item.subNav && subnav
             ? item.iconOpened
