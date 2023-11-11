@@ -10,12 +10,12 @@ import SideBar from '../components/base/SideBar';
 
 import '../styles/globals.css';
 import styled from 'styled-components';
+import Layout from '../components/layout'
 
-// const ContentContainer = styled.div`
-//   margin-left: ${({ sidebarWidth }) => (sidebarWidth ? '250px' : '0')}; /* Adjust margin based on sidebarWidth state */
-//   transition: margin 350ms;
-//   padding: 20px; /* Add padding to the content area */
-// `;
+const ContentContainer = styled.div`
+  margin-left: 250px;
+  padding: 20px; /* Add padding to the content area */
+`;
 
 function MyApp({ Component, pageProps }) {
     return (
@@ -23,17 +23,16 @@ function MyApp({ Component, pageProps }) {
         <Head>
           <title>My Next.js App</title>
         </Head>
-        <div className="app-container">
-          <Header /> {/* Render the Header component */}
-          <SideBar/>
-          {/* <ContentContainer sidebarWidth={sidebarWidth}>
+        
+      
+        <Header />
+        <SideBar/>
+        <main>
+          <ContentContainer>
             <Component {...pageProps} />
-          </ContentContainer> */}
-          <main>
-            <Component {...pageProps} />
-          </main>
-          
-        </div>
+          </ContentContainer>
+        </main>
+   
       </>
     );
   }
