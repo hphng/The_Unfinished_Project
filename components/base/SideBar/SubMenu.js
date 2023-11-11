@@ -22,6 +22,10 @@ const SidebarLink = styled.div`
   }
 `;
 
+const StyledLink = styled.div`
+  text-decoration: none;
+`;
+
 const SidebarLabel = styled.span`
   margin-left: 16px;
 `;
@@ -50,11 +54,11 @@ const SubMenu = ({ item }) => {
   return (
     <>
       <SidebarLink onClick={item.subNav && showSubnav}>
-        <Link href={item.path}>
-          <div>
+        <Link href={item.path} passHref>
+          <StyledLink>
             {item.icon}
             <SidebarLabel>{item.title}</SidebarLabel>
-          </div>
+          </StyledLink>
         </Link>
         <div>
           {item.subNav && subnav
