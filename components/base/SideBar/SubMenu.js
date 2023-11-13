@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Link from 'next/link';
-
 import styled from "styled-components";
 
 const SidebarLink = styled.div`
@@ -22,8 +21,9 @@ const SidebarLink = styled.div`
   }
 `;
 
-const StyledLink = styled.div`
-  text-decoration: none;
+const StyledLink = styled.a`
+  text-decoration: none ;
+  color: white;
 `;
 
 const SidebarLabel = styled.span`
@@ -54,26 +54,31 @@ const SubMenu = ({ item }) => {
   return (
     <>
       <SidebarLink onClick={item.subNav && showSubnav}>
-        <Link href={item.path} passHref>
+        <Link href={item.path} style={{ textDecoration: "none" }}>
           <StyledLink>
             {item.icon}
             <SidebarLabel>{item.title}</SidebarLabel>
           </StyledLink>
+
         </Link>
         <div>
           {item.subNav && subnav
             ? item.iconOpened
             : item.subNav
-            ? item.iconClosed
-            : null}
+              ? item.iconClosed
+              : null}
         </div>
       </SidebarLink>
       {subnav &&
         item.subNav.map((item, index) => {
           return (
-            <DropdownLink key={index}>
-              {item.icon}
-              <SidebarLabel>{item.title}</SidebarLabel>
+            <DropdownLink key={index} >
+              <Link href={item.path} passHref style={{ textDecoration: "none" }}>
+                <StyledLink>
+                  {item.icon}
+                  <SidebarLabel>{item.title}</SidebarLabel>
+                </StyledLink>
+              </Link>
             </DropdownLink>
           );
         })}
