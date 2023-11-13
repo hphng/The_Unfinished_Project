@@ -1,0 +1,8 @@
+require("dotenv").config();
+const path = require("path");
+module.exports = {
+  config: path.resolve("utils/postgre/config", "config.js"),
+  "models-path": path.resolve("utils/postgre", "models"),
+  "seeders-path": path.resolve("utils/postgre", "seeders"),
+  "migrations-path": path.resolve("utils/postgre", "migrations"),
+};
