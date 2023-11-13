@@ -21,10 +21,10 @@ const SidebarLink = styled.div`
   }
 `;
 
-const StyledLink = styled.a`
-  text-decoration: none ;
-  color: white;
-`;
+// const StyledLink = styled.a`
+//   text-decoration: none ;
+//   color: white;
+// `;
 
 const SidebarLabel = styled.span`
   margin-left: 16px;
@@ -54,11 +54,11 @@ const SubMenu = ({ item }) => {
   return (
     <>
       <SidebarLink onClick={item.subNav && showSubnav}>
-        <Link href={item.path} style={{ textDecoration: "none" }}>
-          <StyledLink>
+        <Link href={item.path} style={{ textDecoration: "none", color: "white" }}>
+       
             {item.icon}
             <SidebarLabel>{item.title}</SidebarLabel>
-          </StyledLink>
+     
 
         </Link>
         <div>
@@ -73,11 +73,11 @@ const SubMenu = ({ item }) => {
         item.subNav.map((item, index) => {
           return (
             <DropdownLink key={index} >
-              <Link href={item.path} passHref style={{ textDecoration: "none" }}>
-                <StyledLink>
+              <Link href={item.path} passHref style={{ textDecoration: "none",  color: "white"}}>
+            
                   {item.icon}
                   <SidebarLabel>{item.title}</SidebarLabel>
-                </StyledLink>
+             
               </Link>
             </DropdownLink>
           );
