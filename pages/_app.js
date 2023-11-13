@@ -6,8 +6,16 @@ import Head from 'next/head';
 
 import Header from '../components/base/Header';
 import Footer from '../components/base/Footer';
+import SideBar from '../components/base/SideBar';
 
 import '../styles/globals.css';
+import styled from 'styled-components';
+import Layout from '../components/layout'
+
+const ContentContainer = styled.div`
+  margin-left: 250px;
+  padding: 20px; /* Add padding to the content area */
+`;
 
 function MyApp({ Component, pageProps }) {
     return (
@@ -15,13 +23,16 @@ function MyApp({ Component, pageProps }) {
         <Head>
           <title>My Next.js App</title>
         </Head>
-        <div className="app-container">
-          <Header /> {/* Render the Header component */}
-          <main>
+        
+      
+        <Header />
+        <SideBar/>
+        <main>
+          <ContentContainer>
             <Component {...pageProps} />
-          </main>
-          <Footer /> {/* Render the Footer component */}
-        </div>
+          </ContentContainer>
+        </main>
+   
       </>
     );
   }

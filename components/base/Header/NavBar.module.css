@@ -1,0 +1,143 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #779282;
+  padding-left: 30px;
+  padding: 10px;
+  gap: 10px;
+  flex-grow: 1;
+  /* Vertical alignment */
+}
+
+.prjLogo {
+  display: flex;
+  flex-grow: 1;
+  margin-left: 15px;
+  flex-shrink: 0;
+}
+
+.content {
+  margin-left: auto;
+  display: flex;
+  /* gap: 30px; */
+  justify-content: space-evenly;
+  flex-grow: 0.5;
+  /* Adjust the gap between content items */
+}
+
+.content a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+/* .content a:hover{
+    color: blue;
+    text-decoration: underline;
+} */
+
+.content a::after {
+  content: "";
+  /* Add an empty content to make the ::after pseudo-element appear */
+  display: block;
+  /* Make it a block-level element */
+  border-bottom: 2px solid transparent;
+  /* Set the initial border-bottom to transparent */
+  transition: border-bottom 0.3s ease;
+  /* Add a smooth transition for the border-bottom property */
+  position: absolute;
+  /* Position relative to the parent link */
+  left: 0;
+  /* Align to the left edge of the link */
+  bottom: 10;
+  /* Align to the bottom edge of the link */
+  width: 100%;
+  /* Make the underline span the full width of the link */
+}
+
+/* Adjust the styles for the underline box on hover */
+.content a:hover::after {
+  border-bottom: 2px solid black;
+  /* Change border color on hover */
+}
+
+.content a.active::after {
+  border-bottom: 2px solid black;
+  /* Keep the underline in place */
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: #f1f3f4;
+  flex-shrink: 1;
+  padding: 8px;
+  border-radius: 8px;
+  width: 500px;
+  transition: width 0.3s ease, max-width 0.3s ease;
+}
+
+.searchIcon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.searchIcon:hover {
+  color: #007bff;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+
+@media (max-width: 1024px) {
+  .searchBar {
+    width: 100%;
+    max-width: 300px;
+   
+  }
+
+  .input::placeholder {
+    content: " ";
+  }
+}
+
+@media (max-width: 768px) {
+  .searchBar {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .input {
+    width: 140px;
+    /* padding-right: 5px; */
+  }
+
+}
+
+@media (max-width: 640px) {
+  .searchBar {
+    width: 100%;
+    max-width: 100px;
+  }
+
+  .input{
+    width: 70px;
+    /* padding-right: 5px; */
+  }
+
+  .input::placeholder {
+    content: " ";
+    color: transparent;
+  }
+}
