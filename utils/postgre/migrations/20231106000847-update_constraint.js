@@ -16,7 +16,7 @@ module.exports = {
       }),
     ]);
 
-    /**
+    /**-
      * Add altering commands here.
      *
      * Example:
