@@ -1,10 +1,7 @@
-
-
 {
   "name": "the-unfinished-project",
   "version": "0.1.0",
   "private": true,
-
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -24,6 +21,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
     "sequelize": "^6.34.0",
+    "sequelize-cli": "^6.6.2",
     "styled-components": "^6.1.0"
   },
   "devDependencies": {
