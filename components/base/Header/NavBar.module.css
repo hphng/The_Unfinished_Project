@@ -4,7 +4,8 @@
   background-color: #779282;
   padding-left: 30px;
   padding: 10px;
-  gap: 10px;
+  min-width: 500px;
+  /* gap: 10px; */
   flex-grow: 1;
   /* Vertical alignment */
 }
@@ -19,6 +20,7 @@
 .content {
   margin-left: auto;
   display: flex;
+  background-color: #779282;
   /* gap: 30px; */
   justify-content: space-evenly;
   flex-grow: 0.5;
