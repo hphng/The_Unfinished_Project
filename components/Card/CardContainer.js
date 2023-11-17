@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-
+import * as AiIcons from "react-icons/ai";
+import PlusButton from './PlusButton';
+import "./CardContainer.module.css";
 import Card from './Cards';
 
 const CardContainer = () => {
@@ -22,12 +24,10 @@ const CardContainer = () => {
                     onChange={(e) => setCardContent(e.target.value)}
                     className="border p-2 mr-2"
                 />
-                <button
+                <AiIcons.AiFillPlusCircle
                     onClick={handleAddCard}
-                    className="bg-blue-500 text-white p-2 rounded"
-                >
-                    Add Card
-                </button>
+                    style={{ fontSize: '24px', cursor: 'pointer' }}
+                    className='plus-icon' />
             </div>
             <div className="flex flex-wrap">
                 {cards.map((card, index) => (
