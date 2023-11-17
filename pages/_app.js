@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
     return (
       <>
         <Head>
-          <title>My Next.js App</title>
+          <title>The Unfinished Project</title>
         </Head>
         
       
