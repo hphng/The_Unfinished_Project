@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class receivers extends Model {
     /**
@@ -28,11 +26,6 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false, // Ensure name is not null
-    },
-
-    status: {
-      type: DataTypes.STRING,
-      allowNull: true,
     },
 
   }, {
