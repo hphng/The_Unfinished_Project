@@ -8,6 +8,10 @@ import Header from '../components/base/Header';
 import Footer from '../components/base/Footer';
 import SideBar from '../components/base/SideBar';
 
+import Card from '../components/Card/Card';
+import Card2 from '@components/Card/Card';
+
+
 import '../styles/globals.css';
 import styled from 'styled-components';
 import Layout from '../components/layout'
@@ -18,23 +22,26 @@ const ContentContainer = styled.div`
 `;
 
 function MyApp({ Component, pageProps }) {
-    return (
-      <>
-        <Head>
-          <title>My Next.js App</title>
-        </Head>
-        
-      
-        <Header />
-        <SideBar/>
-        <main>
-          <ContentContainer>
-            <Component {...pageProps} />
-          </ContentContainer>
-        </main>
-   
-      </>
-    );
-  }
+ 
+  return (
+    <>
+      <Head>
+        <title>My Next.js App</title>
+      </Head>
+
+
+      <Header />
+      <SideBar />
+      <main>
+        <ContentContainer>
+         
+          <Card2/>
+          <Component {...pageProps} />
+        </ContentContainer>
+      </main>
+
+    </>
+  );
+}
 
 export default MyApp;
