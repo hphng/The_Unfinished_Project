@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+const tailwindcss = require('tailwindcss');
 
 module.exports = {
   content: [
@@ -6,7 +6,16 @@ module.exports = {
     "./src/**/*.jsx",
     "./src/**/*.ts",
     "./src/**/*.tsx",
-    "./public/index.html"
+    "./public/index.html",
+    "./pages/*.{html, js, jsx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/*.{js,ts,jsx,tsx,mdx}",
+    "./styles/*.{js,ts,jsx,tsx,mdx,css}",
+    "./styles/globals.css",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -32,5 +41,6 @@ module.exports = {
     }
   },
   plugins: [],
+  ...tailwindcss.Config,
 }
 
