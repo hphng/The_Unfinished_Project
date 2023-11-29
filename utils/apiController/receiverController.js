@@ -1,56 +1,11 @@
-import { notFound, success, serverError } from './mockResponse'
-const { receivers } = require('../postgre/models')
+import { notFound, success, serverError } from '../mockResponse'
+import { receivers } from '../postgre/models'
 
 export default class ReceiverController {
     constructor(){
         console.log("Here is the Receiver Controller class")
     }
     //asynchronous: independently from the main flow (normally, system will wait task A complete to exceute task B. but async task will get to independent branch -> parallelly handle async task with the main flow)
-    async createReceiver (req, res){
-        try {
-            //req destructurelize
-            const data = req.body;
-            const { email, name } = data;
-
-            //Validate
-            if ( !email || !name){
-                console.log(data)
-                return notFound(res, {error:"Please provide full information"});
-            }
-
-            const EMAIL_VALIDATION = /^[\w-\.]+@([\w-]+\.)+[\w-]{3,4}$/; 
-            if (!EMAIL_VALIDATION.test(email)){
-                return notFound(res, {error:"Email wrong format"});
-            }
-            //database logic
-            await receivers.create({email, name})
-
-            //response
-            return success(res, data, { message: "User data received and validated successfully"});
-        }
-        catch (err) {
-            console.log(err);
-            return serverError(res, { error: err });
-        }
-    }
-
-    async getAllReceiver (req, res){
-        try {
-        //req destructurelize
-
-        //Validate
-
-        //database logic
-        const data = await receivers.findAll({})
-        //response
-        return success(res, data, {message: "Get all users. Complete !"});
-        } 
-        catch (err) {
-            console.log(err);
-            return serverError(res, { error: err });
-        }
-    }
-
     async getReceiverbyID (req, res){
         try{   
         //destructurelise request
