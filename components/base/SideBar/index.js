@@ -27,7 +27,7 @@ const SidebarNav = styled.nav`
   //overflow-y: auto;
   //left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
   //transition: 350ms;
-  z-index: 10;
+  /* z-index: 10; */
 `;
 
 const SidebarWrap = styled.div`
@@ -49,7 +49,7 @@ export default function SideBar() {
             {SideBarData.map((item, index) => {
               return <SubMenu item={item} key={index} />;
             })}
-          
+
           </SidebarWrap>
         </SidebarNav>
       </IconContext.Provider>
