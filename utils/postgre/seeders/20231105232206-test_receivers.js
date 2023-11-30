@@ -7,7 +7,7 @@ module.exports = {
       "receivers",
       [
         {
-          email: "minhnguyen150403@gmail.com",
+          email: "m1hnguyen150403@gmail.com",
           name: "Minh Nguyen",
           userID: 1,
           createdAt: new Date(),

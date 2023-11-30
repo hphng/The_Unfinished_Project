@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "SQLseed": "sequelize db:seed:all"
+    "SQLseedUser": "sequelize db:seed --seed utils/postgre/seeders/20231105232206-test_receivers.js",
+    "SQLseedReceiver": "sequelize db:seed --seed utils/postgre/seeders/20231105232206-test_receivers.js",
+    "SQLmigrate": "sequelize db:migrate"
   },
   "dependencies": {
     "bootstrap": "^5.3.2",

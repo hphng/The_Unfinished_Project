@@ -1,5 +1,3 @@
-const { users } = require(".")
-
 'use strict';
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
@@ -10,9 +8,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      receivers.belongsTo(users, {
-        foreignKey: 'userId',
-      });
+      // receivers.belongsTo(models.users, {
+      //   foreignKey: 'userId',
+      // });
       // define association here
     }
   }
@@ -38,6 +36,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false, // Ensure name is not null
     },
+
+    userID: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    }
 
   }, {
     sequelize,
