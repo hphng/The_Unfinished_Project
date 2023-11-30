@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>My Next.js App</title>
+        <title>The Unfinished Prj</title>
       </Head>
 
 
@@ -34,8 +34,6 @@ function MyApp({ Component, pageProps }) {
       <SideBar />
       <main>
         <ContentContainer>
-         
-          <Card2/>
           <Component {...pageProps} />
         </ContentContainer>
       </main>
