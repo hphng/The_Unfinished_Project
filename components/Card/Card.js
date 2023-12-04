@@ -1,4 +1,3 @@
-// pages/index.js
 import { useState } from "react";
 import styles from "./Card.module.css";
 import { FaCirclePlus } from "react-icons/fa6";
@@ -32,8 +31,8 @@ export default function Card2() {
       const newCard = { name, email, title };
 
       // Update the cards state
-      //setCards([...cards, newCard]);
       sampleData.unshift({ ...newCard });
+
       // Clear the input fields
       setName("");
       setEmail("");
