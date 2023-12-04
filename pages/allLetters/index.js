@@ -1,11 +1,10 @@
-import React from 'react'
-import Card2 from '@components/Card/Card'
+import React from "react";
+import Letter from "@components/Letter";
 
 export default function allLetters() {
   return (
     <>
-      <h1>All of your Letters are here</h1>
-      <Card2 />
+      <Letter />
     </>
-  )
+  );
 }
