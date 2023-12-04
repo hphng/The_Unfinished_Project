@@ -25,6 +25,14 @@
   height: 150px;
 }
 
+.card:hover {
+  background-color: black;
+  opacity: 0.1;
+}
+
+.card:hover:active {
+  opacity: 0.4;
+}
 .cardContainer {
   text-align: center;
 }

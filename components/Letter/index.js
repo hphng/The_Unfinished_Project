@@ -97,7 +97,7 @@ export default function Letter() {
                 onChange={(e) => setTitle(e.target.value)}
               />
               <button onClick={addCard} className={styles.button1}>
-                Add Card
+                Add Letter
               </button>
               <button onClick={closePopup} className={styles.button2}>
                 Close
