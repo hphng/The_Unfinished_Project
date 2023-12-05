@@ -1,7 +1,7 @@
 // /receiver/id: display all document of a receiver id
-
-import { notFound, success, serverError, badRequest, methodNotAllowed } from '../../../../utils/mockResponse'
-import { receivers } from '../../../../utils/postgre/models'
+const { notFound, success, serverError, badRequest, methodNotAllowed } = require('../../../../utils/mockResponse')
+const { receivers } = require('../../../../utils/postgre/models')
+const Validator = require("fastest-validator")
 
 class Controller {
     constructor(){
@@ -10,40 +10,17 @@ class Controller {
         this.badRequest = badRequest;
         this.serverError = serverError;
         this.methodNotAllowed = methodNotAllowed;
+        this.v = new Validator();
     }
-    //post: "http://localhost:3000/api/receiver/0"  
-    // async postReceiver (req, res){
-    //     try {
-    //         //req destructurelize
-    //         const id = req.query.id
-    //         const data = req.body;
-    //         const { email, name, userID } = data;
-    //         0
-    //         //Validate
-    //         if (id !== '0')
-    //             return badRequest(res, {error: "wrong id URL"})
-    //         if ( !email || !name || !userID){
-    //             console.log(data)
-    //             return badRequest(res, {error:"Please provide full information"});
-    //         }
-
-    //         const EMAIL_VALIDATION = /^[\w-\.]+@([\w-]+\.)+[\w-]{3,4}$/; 
-    //         if (!EMAIL_VALIDATION.test(email)){
-    //             return badRequest(res, {error:"Email wrong format"});
-    //         }
-    //         //database logic
-    //         await receivers.create({email, name, userID})
-
-    //         //response
-    //         return success(res, data, { message: "data has been added"});
-    //     }
-    //     catch (err) {
-    
-    //         console.log(err);
-    //         return serverError(res, 'error while adding data...');
-    //     }
-    // }
-
+    validate(data){
+        const schema = {
+            name: { type: "string", min: 3, max: 255 },
+            email: {type: "email"}
+        }
+        const validateResponse = this.v.validate(data, schema)
+        return validateResponse
+    }
+ 
     //get: "http://localhost:3000/api/receiver/[id]"
     async getReceiverByID (req, res){
         try{   
@@ -53,15 +30,21 @@ class Controller {
             //validate
                 
             //database logic
-            data = await receivers.findAll({
-                where: {
-                    id: querID
-                }
-            })
+            // data = await receivers.findAll({
+            //     where: {
+            //         id: querID
+            //     }
+            // })
+            data = await receivers.findByPk(querID);
 
             //validate
             if (!data){
-                return notFound(res, {error: "Error while getting user data"});
+                return notFound(res, {error: "Error while getting user data..."});
+            }
+            val = this.validate(data)
+            if (val !== true){
+                console.log(data)
+                return badRequest(res, {error: "Data is not validated..."})
             }
             //response
         return success(res, data, { message: "Get user data by ID successfully" });
@@ -84,10 +67,14 @@ class Controller {
                 console.log(email, name)
                 return badRequest(res, { error: "Please provide full information" });
               }
-
             const EMAIL_VALIDATION = /^[\w-\.]+@([\w-]+\.)+[\w-]{3,4}$/; 
             if (!EMAIL_VALIDATION.test(email)){
                 return badRequest(res, {error:"Email wrong format"});
+            }
+            val = this.validate(data)
+            if (val !== true){
+                console.log(data)
+                return badRequest(res, {error: "Data is not validated..."})
             }
 
             //database logic

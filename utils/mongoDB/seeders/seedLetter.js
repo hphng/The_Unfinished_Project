@@ -20,11 +20,9 @@ async function seedLetter() {
             console.log("Existing Letter table dropped");
         }
         //database logic
-        
         var savedLetter = new Letter(seedLetterData);
         savedLetter.save();
         console.log('Letter data seeded success');
-
     } catch (error) {
         console.log("Error while seeding data", error);
     }
