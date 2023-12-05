@@ -1,6 +1,7 @@
+// /receiver/id: display all document of a receiver id
 
-import { notFound, success, serverError, badRequest, methodNotAllowed } from '../../../utils/mockResponse'
-import { receivers } from '../../../utils/postgre/models'
+import { notFound, success, serverError, badRequest, methodNotAllowed } from '../../../../utils/mockResponse'
+import { receivers } from '../../../../utils/postgre/models'
 
 class Controller {
     constructor(){
@@ -11,40 +12,39 @@ class Controller {
         this.methodNotAllowed = methodNotAllowed;
     }
     //post: "http://localhost:3000/api/receiver/0"  
-    async postReceiver (req, res){
-        try {
-            //req destructurelize
-            const id = req.query.id
-            const data = req.body;
-            const { email, name, userID } = data;
-            
-            //Validate
-            if (id !== '0')
-                return badRequest(res, {error: "wrong id URL"})
-            if ( !email || !name || !userID){
-                console.log(data)
-                return badRequest(res, {error:"Please provide full information"});
-            }
+    // async postReceiver (req, res){
+    //     try {
+    //         //req destructurelize
+    //         const id = req.query.id
+    //         const data = req.body;
+    //         const { email, name, userID } = data;
+    //         0
+    //         //Validate
+    //         if (id !== '0')
+    //             return badRequest(res, {error: "wrong id URL"})
+    //         if ( !email || !name || !userID){
+    //             console.log(data)
+    //             return badRequest(res, {error:"Please provide full information"});
+    //         }
 
-            const EMAIL_VALIDATION = /^[\w-\.]+@([\w-]+\.)+[\w-]{3,4}$/; 
-            if (!EMAIL_VALIDATION.test(email)){
-                return badRequest(res, {error:"Email wrong format"});
-            }
-            //database logic
-            await receivers.create({email, name, userID})
+    //         const EMAIL_VALIDATION = /^[\w-\.]+@([\w-]+\.)+[\w-]{3,4}$/; 
+    //         if (!EMAIL_VALIDATION.test(email)){
+    //             return badRequest(res, {error:"Email wrong format"});
+    //         }
+    //         //database logic
+    //         await receivers.create({email, name, userID})
 
-            //response
-            return success(res, data, { message: "data has been added"});
-        }
-        catch (err) {
+    //         //response
+    //         return success(res, data, { message: "data has been added"});
+    //     }
+    //     catch (err) {
     
-            console.log(err);
-            return serverError(res, 'error while adding data...');
-        }
-    }
+    //         console.log(err);
+    //         return serverError(res, 'error while adding data...');
+    //     }
+    // }
 
-    //get: "http://localhost:3000/api/receiver/0" 
-    //get: "http://localhost:3000/api/receiver/[id != 0]"
+    //get: "http://localhost:3000/api/receiver/[id]"
     async getReceiverByID (req, res){
         try{   
             //destructurelise request
@@ -53,15 +53,12 @@ class Controller {
             //validate
                 
             //database logic
-            if (req.query.id === '0'){
-                data = await receivers.findAll({})
-            } else{
-                data = await receivers.findAll({
-                    where: {
-                        id: querID
-                    }
-                })
-            } 
+            data = await receivers.findAll({
+                where: {
+                    id: querID
+                }
+            })
+
             //validate
             if (!data){
                 return notFound(res, {error: "Error while getting user data"});
@@ -74,7 +71,7 @@ class Controller {
             }
     }
 
-    //patch: "http://localhost:3000/api/receiver/[id != 0]"
+    //patch: "http://localhost:3000/api/receiver/[id]"
     async patchReceiver (req, res){
         try{
             //destructurelize
@@ -106,7 +103,7 @@ class Controller {
         }
     }
 
-    //delete: "http://localhost:3000/api/receiver/[id != 0]"
+    //delete: "http://localhost:3000/api/receiver/[id]"
     async deleteReceiver (req, res){
         try{
             //destructurelize
@@ -135,8 +132,8 @@ export default async function requestHandler(req, res){
         switch (req.method){
             case 'GET':
                 return controller.getReceiverByID(req, res)
-            case 'POST':
-                return controller.postReceiver(req, res)
+            // case 'POST':
+            //     return controller.postReceiver(req, res)
             case 'PATCH':
                 return controller.patchReceiver(req, res)
             case 'DELETE':
