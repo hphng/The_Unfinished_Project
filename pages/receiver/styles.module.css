@@ -1,0 +1,53 @@
+.plusCircle {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+}
+
+.overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  width: 250px;
+  height: 350px;
+}
+
+.input {
+  padding: 10px;
+  width: 90%;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.buttons {
+  margin-top: auto;
+  display: inline;
+}
+
+.addButton {
+  border-radius: 4px;
+}
+
+.cancelButton {
+  border-radius: 4px;
+  margin-bottom: 10px;
+}

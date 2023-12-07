@@ -6,7 +6,7 @@ import * as RiIcons from "react-icons/ri";
 export const SideBarData = [
   {
     title: "All Letters",
-    path: "/allLetters",
+    path: "/allLetters/",
     icon: <AiIcons.AiFillHome />,
   },
   {

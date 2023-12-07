@@ -4,6 +4,7 @@
   background-color: #779282;
   padding-left: 30px;
   padding: 10px;
+  min-width: 450px;
   gap: 10px;
   flex-grow: 1;
   /* Vertical alignment */

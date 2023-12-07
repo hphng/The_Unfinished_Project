@@ -1,16 +1,19 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
-import React from 'react';
-import Head from 'next/head';
+import React from "react";
+import Head from "next/head";
 
-import Header from '../components/base/Header';
-import Footer from '../components/base/Footer';
-import SideBar from '../components/base/SideBar';
+import Header from "../components/base/Header";
+import Footer from "../components/base/Footer";
+import SideBar from "../components/base/SideBar";
 
-import '../styles/globals.css';
-import styled from 'styled-components';
-import Layout from '../components/layout'
+import Card from "../components/Letter";
+import Card2 from "@components/Letter";
+
+import "../styles/globals.css";
+import styled from "styled-components";
+import Layout from "../components/layout";
 
 const ContentContainer = styled.div`
   margin-left: 250px;
@@ -18,23 +21,21 @@ const ContentContainer = styled.div`
 `;
 
 function MyApp({ Component, pageProps }) {
-    return (
-      <>
-        <Head>
-          <title>My Next.js App</title>
-        </Head>
-        
-      
-        <Header />
-        <SideBar/>
-        <main>
-          <ContentContainer>
-            <Component {...pageProps} />
-          </ContentContainer>
-        </main>
-   
-      </>
-    );
-  }
+  return (
+    <>
+      <Head>
+        <title>The Unfinished Prj</title>
+      </Head>
+
+      <Header />
+      <SideBar />
+      <main>
+        <ContentContainer>
+          <Component {...pageProps} />
+        </ContentContainer>
+      </main>
+    </>
+  );
+}
 
 export default MyApp;

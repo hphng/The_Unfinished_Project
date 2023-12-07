@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-body{
+body {
   background-color: #F5F5F5;
   font-family: 'League Spartan', sans-serif;
   color: black;
@@ -27,3 +27,4 @@ body{
   background: transparent;
   /* or any background color you want */
 }
+
