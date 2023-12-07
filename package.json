@@ -7,10 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "SQLseed": "sequelize db:seed:all"
+    "SQLseedUser": "sequelize db:seed --seed utils/postgre/seeders/20231128062210-test_user.js",
+    "SQLseedReceiver": "sequelize db:seed --seed utils/postgre/seeders/20231105232206-test_receivers.js",
+    "SQLmigrate": "sequelize db:migrate"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
+    "fastest-validator": "^1.17.0",
     "mongoose": "^7.6.4",
     "next": "13.5.2",
     "next-seo": "^6.1.0",

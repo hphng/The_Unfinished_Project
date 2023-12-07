@@ -1,30 +1,34 @@
 'use strict';
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class receivers extends Model {
+  class users extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // receivers.belongsTo(models.users, {
-      //   foreignKey: 'userId',
-      // });
+      users.hasMany(models.receivers, {
+        foreignKey: 'userId',
+      });
+      
+      // Receiver belongs to one User
+      
       // define association here
     }
   }
-  receivers.init({
+  users.init({
     id: {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
+
     email: {
       type: DataTypes.STRING,
       allowNull: false, // Ensure email is not null
-      unique: true, // Ensure email is unique
+      //unique: true, // Ensure email is unique
       validate: {
         isEmail: {
           args: true,
@@ -32,19 +36,24 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
-    name: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false, // Ensure name is not null
     },
 
-    userID: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false, // Ensure name is not null
+    },
+
+    dob: {
+        type: DataTypes.DATE,
+        allowNull: false,
     }
 
   }, {
     sequelize,
-    modelName: 'receivers',
+    modelName: 'user',
   });
-  return receivers;
+  return users;
 };

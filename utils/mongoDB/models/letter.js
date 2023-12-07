@@ -16,16 +16,10 @@ const letterSchema = new mongoose.Schema({
         created_at: Date,
         updated_at: Date,
     },
-    sendEmailStatus:
-    {
-        type: Boolean,
-        default: false,
-    }
 })
 
 letterSchema.pre('save', async function(next){
     var currentDate = new Date();
-
     //change the updated field to current date
     letterSchema.updated_at = currentDate;
 
@@ -39,4 +33,4 @@ letterSchema.pre('save', async function(next){
 
 const letter = mongoose.models.letterSchema || mongoose.model('Letter', letterSchema);
 
-module.exports = letter;
+module.exports = letter; //commonJS ghe
