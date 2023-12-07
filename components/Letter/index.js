@@ -1,6 +1,8 @@
+// pages/index.js
 import { useState } from "react";
-import styles from "./Card.module.css";
+import styles from "./Letter.module.css";
 import { FaCirclePlus } from "react-icons/fa6";
+import { LetterData } from "./LetterData";
 
 const sampleData = [
   {
@@ -10,7 +12,7 @@ const sampleData = [
   },
 ];
 
-export default function Card2() {
+export default function Letter() {
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -31,8 +33,8 @@ export default function Card2() {
       const newCard = { name, email, title };
 
       // Update the cards state
-      sampleData.unshift({ ...newCard });
-
+      //setCards([...cards, newCard]);
+      LetterData.unshift({ ...newCard });
       // Clear the input fields
       setName("");
       setEmail("");
@@ -58,7 +60,7 @@ export default function Card2() {
         onClick={openPopup}
       />
       <div className={styles.container}>
-        {sampleData.map((card, index) => (
+        {LetterData.map((card, index) => (
           <div className={styles.cardContainer}>
             <div key={index} className={styles.card}></div>
             <h3>{card.title}</h3>
@@ -70,6 +72,7 @@ export default function Card2() {
         {isPopupOpen && (
           <div className={styles.popup}>
             <div className={styles.popupContent}>
+              <h2>Write a new Letter</h2>
               <label htmlFor="name" className={styles.label1}>
                 Receiver's name:
               </label>
@@ -94,7 +97,7 @@ export default function Card2() {
                 onChange={(e) => setTitle(e.target.value)}
               />
               <button onClick={addCard} className={styles.button1}>
-                Add Card
+                Add Letter
               </button>
               <button onClick={closePopup} className={styles.button2}>
                 Close
