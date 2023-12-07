@@ -1,3 +1,5 @@
+// Receiver.js
+
 import React from "react";
 import styled from "styled-components";
 
@@ -24,10 +26,6 @@ const DetailsContainer = styled.div`
   flex-direction: column;
 `;
 
-const NickName = styled.div`
-  font-weight: bold;
-`;
-
 const Name = styled.div`
   overflow: hidden;
   white-space: nowrap;
@@ -44,15 +42,14 @@ const BigContainer = styled.div`
   max-width: 800px;
 `;
 
-const Receiver = ({ friend }) => {
-  const { profilePicture, nickName, name, email } = friend;
+const Receiver = ({ receiver }) => {
+  const { profilePicture, Name: name, Email: email } = receiver;
 
   return (
     <BigContainer>
       <ReceiverContainer>
         <ProfilePicture src={profilePicture} alt="Profile" />
         <DetailsContainer>
-          <NickName>{nickName}</NickName>
           <Name>{name}</Name>
           <Email>{email}</Email>
         </DetailsContainer>
